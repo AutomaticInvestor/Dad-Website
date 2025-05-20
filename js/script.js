@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Existing code...
     
     // Photo Gallery Lightbox functionality
-    const photoPlaceholders = document.querySelectorAll('.photo-placeholder');
+    const photoImages = document.querySelectorAll('.photo-image');
     
-    photoPlaceholders.forEach(photo => {
+    photoImages.forEach(photo => {
         photo.addEventListener('click', function() {
-            openLightbox(this.getAttribute('data-img') || 'Placeholder Image', this.getAttribute('data-caption') || 'Image Caption');
+            openLightbox(this.getAttribute('src'), this.getAttribute('alt'));
         });
     });
     
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     bannerPhotos.forEach(photo => {
         photo.addEventListener('click', function() {
             const imgElement = this.querySelector('img');
-            const imgSrc = imgElement ? imgElement.getAttribute('alt') : 'Memorial Photo';
+            const imgSrc = imgElement ? imgElement.getAttribute('src') : 'Memorial Photo';
             const imgCaption = imgElement ? imgElement.getAttribute('alt') : 'Memorial Photo';
             
             openLightbox(imgSrc, imgCaption);
@@ -81,7 +81,7 @@ function openLightbox(imgSrc, caption) {
     lightbox.innerHTML = `
         <div class="lightbox-content">
             <span class="close-lightbox">&times;</span>
-            <div class="lightbox-placeholder">${imgSrc}</div>
+            <img src="${imgSrc}" alt="${caption}" class="lightbox-image">
             <div class="lightbox-caption">${caption}</div>
         </div>
     `;

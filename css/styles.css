@@ -178,20 +178,15 @@ section {
     box-shadow: var(--shadow-md);
 }
 
-.photo-placeholder {
+.photo-image {
     height: 100%;
     width: 100%;
-    background-color: #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
-    font-weight: 500;
+    object-fit: cover;
     cursor: pointer;
     transition: var(--transition);
 }
 
-.photo-placeholder:hover {
+.photo-image:hover {
     transform: scale(1.02);
 }
 
@@ -389,16 +384,11 @@ footer {
     cursor: pointer;
 }
 
-.lightbox-placeholder {
-    width: 100%;
-    height: 400px;
-    background-color: #e5e7eb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
-    font-size: 1.2rem;
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
     border-radius: var(--border-radius-md);
+    object-fit: contain;
 }
 
 .lightbox-caption {
