@@ -1,10 +1,26 @@
+// Add banner animation initialization
 document.addEventListener('DOMContentLoaded', function() {
+    // Existing code...
+    
     // Photo Gallery Lightbox functionality
     const photoPlaceholders = document.querySelectorAll('.photo-placeholder');
     
     photoPlaceholders.forEach(photo => {
         photo.addEventListener('click', function() {
             openLightbox(this.getAttribute('data-img') || 'Placeholder Image', this.getAttribute('data-caption') || 'Image Caption');
+        });
+    });
+    
+    // Banner photo click functionality
+    const bannerPhotos = document.querySelectorAll('.photo-banner-card');
+    
+    bannerPhotos.forEach(photo => {
+        photo.addEventListener('click', function() {
+            const imgElement = this.querySelector('img');
+            const imgSrc = imgElement ? imgElement.getAttribute('alt') : 'Memorial Photo';
+            const imgCaption = imgElement ? imgElement.getAttribute('alt') : 'Memorial Photo';
+            
+            openLightbox(imgSrc, imgCaption);
         });
     });
     

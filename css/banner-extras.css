@@ -1,0 +1,20 @@
+/* Placeholder images for the banner */
+.photo-banner-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e5e7eb;
+    color: #1a252f;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Add a subtle hover effect */
+.photo-banner-card:hover {
+    transform: scale(1.05) !important;
+    z-index: 10 !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
